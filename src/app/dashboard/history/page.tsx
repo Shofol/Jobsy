@@ -35,9 +35,9 @@ export default async function HistoryPage() {
             <li key={a.id}>
               <Link
                 href={`/dashboard/history/${a.id}`}
-                className="block rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 hover:border-zinc-700 transition-colors"
+                className="block rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 hover:border-zinc-700 transition-colors min-w-0"
               >
-                <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-2">
                   <div className="min-w-0">
                     <p className="font-medium text-zinc-100 truncate">
                       {(a.result_json?.jobSummary as { roleTitle?: string })?.roleTitle ?? "Analysis"}
@@ -46,7 +46,7 @@ export default async function HistoryPage() {
                       {a.resumes?.file_name ?? "Resume"} · {(a.job_descriptions?.content ?? "").slice(0, 50)}…
                     </p>
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="flex items-center gap-3 shrink-0 flex-wrap">
                     {typeof (a.result_json?.matchAnalysis as { matchPercent?: number })?.matchPercent === "number" && (
                       <span className="text-sm font-medium text-amber-400">
                         {(a.result_json.matchAnalysis as { matchPercent: number }).matchPercent}% match

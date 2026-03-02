@@ -1,4 +1,4 @@
-# Resume Review
+# Jobsy
 
 A production-ready SaaS MVP that lets users upload a resume, paste a job description, and get AI-powered analysis: skill match, missing keywords, resume suggestions, and company insights.
 

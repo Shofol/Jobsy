@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import type { JobDescription } from '@/lib/types';
+import { useRef } from "react";
+import type { JobDescription } from "@/lib/types";
 
 interface JobDescriptionStepProps {
   jobDescriptions: JobDescription[];
@@ -24,9 +24,12 @@ export function JobDescriptionStep({
 
   return (
     <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
-      <h2 className="text-lg font-semibold text-zinc-100 mb-1">Paste job description</h2>
+      <h2 className="text-lg font-semibold text-zinc-100 mb-1">
+        Paste job description
+      </h2>
       <p className="text-sm text-zinc-400 mb-6">
-        Copy the full job posting; we&apos;ll summarize it and match it to your resume.
+        Copy the full job posting; we&apos;ll summarize it and match it to your
+        resume.
       </p>
 
       <form ref={formRef} action={jdAction} className="mb-6">
@@ -49,7 +52,9 @@ export function JobDescriptionStep({
 
       {jobDescriptions.length > 0 && (
         <>
-          <h3 className="text-sm font-medium text-zinc-300 mb-2">Saved job descriptions</h3>
+          <h3 className="text-sm font-medium text-zinc-300 mb-2">
+            Saved job descriptions
+          </h3>
           <ul className="space-y-2 mb-4">
             {jobDescriptions.map((jd) => (
               <li key={jd.id}>
@@ -58,12 +63,13 @@ export function JobDescriptionStep({
                   onClick={() => onSelectJd(jd.id)}
                   className={`w-full text-left rounded-lg border px-3 py-2 text-sm transition-colors truncate ${
                     selectedJdId === jd.id
-                      ? 'border-amber-500 bg-amber-500/10 text-amber-200'
-                      : 'border-zinc-700 bg-zinc-800/50 text-zinc-300 hover:border-zinc-600'
+                      ? "border-amber-500 bg-amber-500/10 text-amber-200"
+                      : "border-zinc-700 bg-zinc-800/50 text-zinc-300 hover:border-zinc-600"
                   }`}
                   title={jd.content.slice(0, 100)}
                 >
-                  {jd.content.slice(0, 60)}… · {new Date(jd.created_at).toLocaleDateString()}
+                  {jd.content.slice(0, 60)}… ·{" "}
+                  {new Date(jd.created_at).toLocaleDateString()}
                 </button>
               </li>
             ))}

@@ -53,23 +53,23 @@ export function AnalysisResultView({
   const dashboard = result.resultsDashboard;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 min-w-0 overflow-hidden">
       <div className="flex flex-wrap items-center gap-2">
         {backHref ? (
-          <Link href={backHref} className="text-sm text-zinc-400 hover:text-zinc-200">
+          <Link href={backHref} className="text-sm text-zinc-400 hover:text-zinc-200 py-2 touch-manipulation">
             ← Back
           </Link>
         ) : (
-          <button type="button" onClick={onBack} className="text-sm text-zinc-400 hover:text-zinc-200">
+          <button type="button" onClick={onBack} className="text-sm text-zinc-400 hover:text-zinc-200 py-2 touch-manipulation">
             ← Back
           </button>
         )}
         {newAnalysisHref ? (
-          <Link href={newAnalysisHref} className="rounded-lg border border-zinc-700 px-3 py-1.5 text-sm text-zinc-300 hover:bg-zinc-800">
+          <Link href={newAnalysisHref} className="rounded-lg border border-zinc-700 px-3 py-2.5 sm:py-1.5 text-sm text-zinc-300 hover:bg-zinc-800 touch-manipulation min-h-[44px] sm:min-h-0 inline-flex items-center">
             New analysis
           </Link>
         ) : (
-          <button type="button" onClick={onNewAnalysis} className="rounded-lg border border-zinc-700 px-3 py-1.5 text-sm text-zinc-300 hover:bg-zinc-800">
+          <button type="button" onClick={onNewAnalysis} className="rounded-lg border border-zinc-700 px-3 py-2.5 sm:py-1.5 text-sm text-zinc-300 hover:bg-zinc-800 touch-manipulation min-h-[44px] sm:min-h-0">
             New analysis
           </button>
         )}
@@ -238,7 +238,7 @@ export function AnalysisResultView({
             {dashboard.sectionScores && Object.keys(dashboard.sectionScores).length > 0 && (
               <div className="space-y-2">
                 <h4 className="text-xs font-medium text-zinc-400">Section scores</h4>
-                <div className="space-y-1.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                   {(Object.entries(dashboard.sectionScores) as [string, number][]).filter(([, v]) => typeof v === 'number').map(([key, value]) => (
                     <div key={key}>
                       <div className="flex justify-between text-xs mb-0.5">
@@ -265,12 +265,12 @@ export function AnalysisResultView({
             )}
 
             {((dashboard.keywordMatches?.length ?? 0) > 0 || (dashboard.keywordGaps?.length ?? 0) > 0) && (
-              <div className="grid sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="rounded border border-zinc-700 bg-zinc-800/30 p-2">
                   <h4 className="text-xs font-medium text-emerald-400 mb-1">Keyword matches</h4>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-1 min-w-0">
                     {(dashboard.keywordMatches ?? []).map((k, i) => (
-                      <span key={i} className="rounded-full bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 text-xs">{k}</span>
+                      <span key={i} className="rounded-full bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 text-xs break-all">{k}</span>
                     ))}
                   </div>
                 </div>
@@ -278,7 +278,7 @@ export function AnalysisResultView({
                   <h4 className="text-xs font-medium text-amber-400 mb-1">Keyword gaps</h4>
                   <div className="flex flex-wrap gap-1">
                     {(dashboard.keywordGaps ?? []).map((k, i) => (
-                      <span key={i} className="rounded-full bg-amber-500/20 text-amber-300 px-1.5 py-0.5 text-xs">{k}</span>
+                      <span key={i} className="rounded-full bg-amber-500/20 text-amber-300 px-1.5 py-0.5 text-xs break-all">{k}</span>
                     ))}
                   </div>
                 </div>

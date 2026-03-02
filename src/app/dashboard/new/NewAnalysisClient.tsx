@@ -99,7 +99,7 @@ export function NewAnalysisClient({
         </div>
       ) : (
         <>
-          <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+          <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-6">
             <h2 className="text-lg font-semibold text-zinc-100 mb-4">
               Job description
             </h2>
@@ -148,7 +148,7 @@ export function NewAnalysisClient({
                 <select
                   value={selectedJdId ?? ""}
                   onChange={(e) => setSelectedJdId(e.target.value || null)}
-                  className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100 focus:border-amber-500 focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-3 sm:py-2 text-zinc-100 focus:border-amber-500 focus:outline-none text-base min-h-[44px] touch-manipulation"
                 >
                   <option value="">Select...</option>
                   {jobDescriptions.map((jd) => (
@@ -162,14 +162,14 @@ export function NewAnalysisClient({
             )}
           </section>
 
-          <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+          <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-6">
             <h2 className="text-lg font-semibold text-zinc-100 mb-4">
               Resume
             </h2>
             <select
               value={selectedResumeId ?? ""}
               onChange={(e) => setSelectedResumeId(e.target.value || null)}
-              className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100 focus:border-amber-500 focus:outline-none"
+              className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-3 sm:py-2 text-zinc-100 focus:border-amber-500 focus:outline-none text-base min-h-[44px] touch-manipulation"
             >
               <option value="">Select...</option>
               {resumes.map((r) => (
@@ -189,7 +189,7 @@ export function NewAnalysisClient({
             type="button"
             onClick={handleRunAnalysis}
             disabled={loading}
-            className="rounded-lg bg-amber-500 px-6 py-2.5 text-sm font-medium text-zinc-950 hover:bg-amber-400 disabled:opacity-50"
+            className="w-full sm:w-auto rounded-lg bg-amber-500 px-6 py-3.5 sm:py-2.5 text-sm font-medium text-zinc-950 hover:bg-amber-400 disabled:opacity-50 min-h-[44px] touch-manipulation"
           >
             {loading ? "Saving & analyzing…" : "Run analysis"}
           </button>

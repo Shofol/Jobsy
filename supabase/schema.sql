@@ -1,4 +1,4 @@
--- Resume Review App - Full database schema
+-- Jobsy App - Full database schema
 -- Run this entire file in Supabase Dashboard → SQL Editor (once) to create all tables and policies
 
 -- Enable UUID extension

@@ -20,7 +20,7 @@ export function LoginForm() {
             type="email"
             autoComplete="email"
             required
-            className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100 placeholder-zinc-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+            className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-3 sm:py-2 text-zinc-100 placeholder-zinc-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 text-base min-h-[44px] touch-manipulation"
             placeholder="you@example.com"
           />
         </div>
@@ -34,7 +34,7 @@ export function LoginForm() {
             type="password"
             autoComplete="current-password"
             required
-            className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-zinc-100 placeholder-zinc-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+            className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-3 sm:py-2 text-zinc-100 placeholder-zinc-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 text-base min-h-[44px] touch-manipulation"
           />
         </div>
         {state?.error && (
@@ -42,7 +42,7 @@ export function LoginForm() {
         )}
         <button
           type="submit"
-          className="w-full rounded-lg bg-amber-500 px-4 py-2.5 font-medium text-zinc-950 hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-zinc-950"
+          className="w-full rounded-lg bg-amber-500 px-4 py-3.5 sm:py-2.5 font-medium text-zinc-950 hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-zinc-950 text-base min-h-[44px] touch-manipulation"
         >
           Sign in
         </button>

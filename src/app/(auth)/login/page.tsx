@@ -6,7 +6,7 @@ export default function LoginPage() {
       <div className="text-center">
         <h1 className="text-2xl font-semibold tracking-tight">Sign in</h1>
         <p className="text-zinc-400 mt-1 text-sm">
-          Access your resume reviews and analyses
+          Access your Jobsy analyses
         </p>
       </div>
       <LoginForm />

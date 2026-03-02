@@ -16,9 +16,9 @@ export function UploadCVClient({ resumes }: UploadCVClientProps) {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-6">
         <form ref={formRef} action={uploadAction} className="space-y-4">
-          <label className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed border-zinc-700 rounded-lg cursor-pointer hover:border-amber-500/50 transition-colors bg-zinc-900/50">
+          <label className="flex flex-col items-center justify-center w-full min-h-[140px] sm:h-36 border-2 border-dashed border-zinc-700 rounded-lg cursor-pointer hover:border-amber-500/50 transition-colors bg-zinc-900/50 py-6 px-4 touch-manipulation">
             <span className="text-sm text-zinc-400">
               Drop file here or click to upload
             </span>
@@ -41,7 +41,7 @@ export function UploadCVClient({ resumes }: UploadCVClientProps) {
       </section>
 
       {resumes.length > 0 && (
-        <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+        <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-6">
           <h2 className="text-lg font-semibold text-zinc-100 mb-3">
             Your resumes
           </h2>
@@ -49,7 +49,7 @@ export function UploadCVClient({ resumes }: UploadCVClientProps) {
             {resumes.map((r) => (
               <li
                 key={r.id}
-                className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-3 py-2 text-sm text-zinc-300"
+                className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-3 py-2.5 text-sm text-zinc-300 break-words"
               >
                 {r.file_name || "Resume"} ·{" "}
                 {new Date(r.created_at).toLocaleDateString()}
@@ -58,7 +58,7 @@ export function UploadCVClient({ resumes }: UploadCVClientProps) {
           </ul>
           <Link
             href="/dashboard/new"
-            className="mt-4 inline-block rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-amber-400"
+            className="mt-4 flex w-full sm:w-auto items-center justify-center rounded-lg bg-amber-500 px-4 py-3 text-sm font-medium text-zinc-950 hover:bg-amber-400 min-h-[44px] touch-manipulation"
           >
             Run new analysis
           </Link>
